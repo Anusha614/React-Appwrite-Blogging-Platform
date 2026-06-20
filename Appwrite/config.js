@@ -74,7 +74,7 @@ async deletePost (slug){
     }
 }
 
-getPost (slug){
+async getPost (slug){
 
     try{
         await this.TablesDB.getRow(
@@ -88,7 +88,7 @@ getPost (slug){
     }
 }
 
-listPost (queries = [Query.equal("status","active")]) {
+async listPost (queries = [Query.equal("status","active")]) {
 
     try{
 
@@ -118,7 +118,7 @@ async deleteFile (fileId) {
     }
 }
 
-uploadFile (fileId){
+async uploadFile (fileId){
 
     try{
 
@@ -130,6 +130,13 @@ uploadFile (fileId){
     } catch (error) {
         console.log ("config :: uploadFile :: error", error)
     }
+}
+
+async getFilePreview(fileId){
+    return this.bucket.getFilePreview(
+        conf.appwriteBucketId,
+        fileId
+    )
 }
 }
 
