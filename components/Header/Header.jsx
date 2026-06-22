@@ -1,14 +1,16 @@
 import React from "react";
-import {Container, LogoutBtn} from '../index'
+import Container from '../container'
+import LogoutBtn from './LogoutBtn'
 import {Link, useNavigate} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import authService from "../../Appwrite/Auth";
+import Logo from '../logo'
 
 
 export default function Header () {
 
     const authStatus = useSelector((state) => state.auth.status)
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
     const navItems = [
         {
@@ -23,12 +25,12 @@ export default function Header () {
         },
         {
             name:"signup",
-            slug:"/signup",
+            slug:"/sign-up",
             active: !authStatus
         },
         {
-            name: "All Post",
-            slug:"all-post",
+            name: "All Posts",
+            slug:"/all-posts",
             active: authStatus
         },
         {
@@ -48,7 +50,7 @@ export default function Header () {
                             </Link>
                     </div>
                     <ul className="flex ml-auto">
-                        {navtems.map((item) => 
+                        {navItems.map((item) => 
                            item.active? (
                             <li key = {item.name}>
                                 <button className="inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
@@ -59,7 +61,7 @@ export default function Header () {
                            ) :null
                         )}
 
-                        {authService && (
+                        {authStatus && (
                             <li>
                                 <LogoutBtn/>
                             </li>

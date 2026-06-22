@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import {Link, useNavigate} from 'react-router-dom'
 import {login} from '../src/store/authSlice'
-import {Button, Input, Logo} from './index'
+import Button from './button.jsx'
+import Input from './input.jsx'  
+import Logo from './logo.jsx'    
 import { useDispatch } from "react-redux";
-import {authService} from '../Appwrite/Auth'
+import authService from '../Appwrite/Auth'
 import {useForm} from 'react-hook-form'
 
-export default function() {
+export default function Login() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
