@@ -1,34 +1,75 @@
-# MegaBlog - Production Blogging Platform
+# React Appwrite Blogging Platform
 
-A content management system built with React, optimized global state, and a secure backend service layer. This project focuses on production-grade form management, reusability, and clean architecture routing guards.
+A full-stack blogging platform built with React, Tailwind CSS, and Appwrite. Users can create accounts, publish blog posts, upload featured images, and manage their own content through a clean web interface.
+
+## Features
+
+* User authentication with Appwrite
+* Create, read, update, and delete blog posts
+* Upload and display featured images
+* Rich text editor for writing posts
+* Responsive UI built with Tailwind CSS
+* Protected routes for authenticated users
 
 ## Tech Stack
 
-- **Frontend Framework:** React (Vite)
-- **State Management:** Redux Toolkit & React-Redux
-- **Form Architecture:** React Hook Form
-- **Backend-as-a-Service:** Appwrite SDK (Auth, Database, Storage)
-- **Styling:** Tailwind CSS
-- **Routing:** React Router DOM
+### Frontend
 
----
+* React
+* React Router
+* Tailwind CSS
+* React Hook Form
+* Redux Toolkit
 
-##  Key Architecture & Engineering Features
+### Backend Services
 
-### 1. Reusable Component Layer (`forwardRef`)
-Form elements like `Input` and `Select` dropdowns are decoupling layouts from data implementation details. By leveraging `React.forwardRef`, they directly pass physical DOM hooks up to standard validation managers without breaking component containment hooks.
+* Appwrite Authentication
+* Appwrite Database
+* Appwrite Storage
 
-### 2. State-Driven Authentication Guards
-Secured routing layout wrapper (`Protected.jsx`) queries Redux global slices directly on component mount. It enforces synchronous navigation gates depending on the state of the user's live token context session.
+### Editor
 
-### 3. Asynchronous Service Layer
-Backend API logic is encapsulated inside dedicated vanilla JavaScript classes (`Auth.js`), keeping React UI components clean and ignorant of low-level HTTP network protocols.
+* TinyMCE
 
----
+## Installation
 
-## Local Installation & Setup
+Clone the repository:
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Anusha614/MegaBlog-with-chai-aur-code.git](https://github.com/Anusha614/MegaBlog-with-chai-aur-code.git)
-   cd MegaBlog
+```bash
+git clone https://github.com/Anusha614/React-Appwrite-Blogging-Platform.git
+cd React-Appwrite-Blogging-Platform
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file and add your Appwrite credentials:
+
+```env
+VITE_APPWRITE_URL=
+VITE_APPWRITE_PROJECT_ID=
+VITE_APPWRITE_DATABASE_ID=
+VITE_APPWRITE_COLLECTION_ID=
+VITE_APPWRITE_BUCKET_ID=
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## What I Learned
+
+* Building a full-stack application using Appwrite
+* Managing authentication and user sessions
+* Handling file uploads and image rendering
+* Working with React Router and protected routes
+* Debugging API and storage-related issues
+
+## License
+
+MIT License
