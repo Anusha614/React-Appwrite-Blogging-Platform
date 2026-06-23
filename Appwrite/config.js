@@ -8,7 +8,7 @@ export class Service {
 
     constructor() {
         this.client
-           .setEndpoint(conf.appwriteUrl)
+           .setEndpoint("https://sgp.cloud.appwrite.io/v1")
             .setProject(conf.appwriteProjectId);
         this.TablesDB = new TablesDB(this.client); 
         this.bucket = new Storage(this.client);
@@ -118,12 +118,15 @@ export class Service {
     }
 
     
- getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+  getFilePreview(fileId){
+        return this.bucket.getFileView(
             conf.appwriteBucketId,
             fileId
         )
     }
+
+  
+        
 }
 
 const service = new Service();

@@ -26,13 +26,16 @@ export default function Post() {
     return post ? (
         <div className="py-8">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-                    
-                    {post.ft_img && (
+                <div className="w-100 flex justify-center mb-4 relative  p-2">
+                  {console.log(service.getFilePreview(post.ft_img))}
+                    {post && post.ft_img && (
+                        
                         <img
+                            
                             src={service.getFilePreview(post.ft_img)}
                             alt={post.title}
-                            className="rounded-xl"
+                            className="w-full h-full object-contain"
+                            style={{ maxHeight: '200px' }}
                         />
                     )}
                     

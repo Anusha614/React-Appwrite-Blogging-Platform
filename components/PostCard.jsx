@@ -16,7 +16,8 @@ export default function PostCard ({ $id, title, featuredImage, ft_img }) {
                         <img 
                             src={service.getFilePreview(imageId)} 
                             alt={title} 
-                            className="rounded-xl" 
+                            className="w-full h-full object-contain"
+                            style={{ maxHeight: '200px' }}
                         />
                     ) : (
                         <div className="h-40 bg-gray-200 rounded-xl flex items-center justify-center">
@@ -24,7 +25,7 @@ export default function PostCard ({ $id, title, featuredImage, ft_img }) {
                         </div>
                     )}
                 </div>
-                <h2 className="text-xl font-bold">{title}</h2>
+                <h2 className="text-xl font-bold text-black w-50">{title}</h2>
             </div>
         </Link>
     )
